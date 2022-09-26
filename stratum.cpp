@@ -204,6 +204,8 @@ YAAMP_ALGO g_algos[] =
 	{"whirlpool", whirlpool_hash, 1, 0 }, /* sha256d merkleroot */
 	{"whirlpoolx", whirlpoolx_hash, 1, 0, 0},
 
+        {"randomx", randomxhash, 0x100, 0, 0},
+
 	{"", NULL, 0, 0},
 };
 
@@ -340,7 +342,9 @@ int main(int argc, char **argv)
 	pthread_t thread2;
 	pthread_create(&thread2, NULL, stratum_thread, NULL);
 
-	sleep(20);
+	//sleep(20);
+        printf("initializing randomx vm...");
+        randomx_init();
 
 	while(!g_exiting)
 	{

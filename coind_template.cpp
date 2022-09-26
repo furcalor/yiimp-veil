@@ -171,6 +171,10 @@ YAAMP_JOB_TEMPLATE *coind_create_template(YAAMP_COIND *coind)
 	const char *flags = json_get_string(json_coinbaseaux, "flags");
 	strcpy(templ->flags, flags ? flags : "");
 
+/*        const char *seed = json_get_string(json_result, "seed");
+        memcpy((void*)seed, templ->seed, 64);
+        ser_string_be2(seed, &templ->seed[ 0], 8);
+*/
         ///////////////////////////////////////////////////////////////////////////veil////
         strcpy(templ->veil_pofn,json_get_string(json_result, "proofoffullnodehash"));
        	json_value *json_accumhashes = json_get_array(json_result, "accumulatorhashes");

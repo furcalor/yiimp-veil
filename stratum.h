@@ -27,6 +27,8 @@ using namespace std;
 
 #include "iniparser/src/iniparser.h"
 
+#include "randomx.h"
+
 #include "json.h"
 #include "util.h"
 
@@ -124,6 +126,8 @@ extern volatile bool g_exiting;
 #include "coind.h"
 #include "remote.h"
 #include "share.h"
+
+#include "randomx.h"
 
 extern YAAMP_DB *g_db;
 extern YAAMP_ALGO g_algos[];
